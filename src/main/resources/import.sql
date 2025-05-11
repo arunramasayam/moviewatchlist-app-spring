@@ -1,0 +1,1 @@
+INSERT INTO User(name, email, password, role) values ('Admin', 'Admin@movieswatchlist.com', '$2a$10$SdZmCfY9YIRyopwyMkcAtOgTFG8wp1/lPwgiYwGxLYdnL22F520CO', 'ADMIN');

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Manager</title>
+    <link rel="stylesheet" href="/css/moviemanage.css";
+</head>
+<body>
+
+<h2 id="formTitle">Manage Movies</h2>
+<!-- Button to show form for Add Movie -->
+<button id="addmovie-btn" onclick="showForm('add')">Add Movie</button>
+
+<form id="movieForm">
+    <input type="hidden" id="movieId">
+    <label>Movie Name: <input type="text" id="movieName" required></label><br><br>
+    <label>Genre:
+        <select id="genre" multiple required>
+            <option value="ACTION">Action</option>
+            <option value="ADVENTURE">Adventure</option>
+            <option value="COMEDY">Comedy</option>
+            <option value="DRAMA">Drama</option>
+            <option value="HORROR">Horror</option>
+            <option value="SCI_FI">Sci-Fi</option>
+            <option value="ROMANCE">Romance</option>
+            <option value="THRILLER">Thriller</option>
+            <option value="FANTASY">Fantasy</option>
+            <option value="CRIME">Crime</option>
+            <option value="HISTORY">History</option>
+            <option value="DOCUMENTARY">Documentary</option>
+            <option value="SPORT">Sport</option>
+            <option value="FAMILY">Family</option>
+        </select>
+    </label><br><br>
+    <label>Release Year: <input type="text" id="releaseYear" required></label><br><br>
+    <label>Description:<br>
+        <textarea id="description" required rows="4" cols="50"></textarea>
+    </label><br><br>
+    <label>Poster: <input type="file" id="poster" accept="image/*"></label><br><br>
+    <button id="submitBtn" type="submit">Save</button>
+    <button type="button" onclick="resetForm()">Reset</button>
+</form>
+
+<h2>Search Movies</h2>
+<input type="text" id="searchInput" placeholder="Search..." oninput="loadMovies()" />
+<div id="movieList"></div>
+<br>
+<div id="pagination-controls"></div>
+
+<script src="js/managemovies.js"></script>
+
+</body>
+</html>

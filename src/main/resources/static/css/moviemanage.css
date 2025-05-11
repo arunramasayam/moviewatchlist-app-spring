@@ -1,0 +1,76 @@
+body {
+         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+         padding: 20px; 
+        }
+
+
+#movieList {
+         display: flex; 
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap:16px
+}
+        
+.movie {  
+         border: 1px solid; 
+         padding: 10px; 
+         margin-bottom: 10px; 
+        
+        }
+img { 
+        max-height: 100px; 
+        display: block; 
+        margin: 10px 0; }
+form { 
+        margin-bottom: 30px; 
+        display: none; } 
+
+
+
+#pagination-controls {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color:olivedrab;
+}
+
+.nxt-btn, .prev-btn{
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+#addmovie-btn, #update-btn{
+        background-color: green;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+#delete-btn{
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+}
+
+#movieForm{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 500px;
+        border: solid 1px whitesmoke;
+        border-radius: 4px;
+        padding:50px;
+        background-color: whitesmoke;
+}
+

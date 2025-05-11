@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
+<body>
+<div id="top-container">
+    <div class="search-left">
+        <input type="text" id="searchBox" placeholder="Search movies..." />
+        <button onclick="triggerSearch()">Search</button>
+    </div>
+
+    <div id="navbar-container"></div>
+<div id="user-section"></div>
+</div>
+
+<div class="header-bar">
+
+    <div class="right-header">
+        <div class="dashboard-title">Dashboard</div>
+        <div class="overview">
+            <div class="overview-item">
+                <div class="overview-number" id="totalMovies">0</div>
+                <div class="overview-label">Total Movies</div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-number" id="watchedMovies">0</div>
+                <div class="overview-label">Watched</div>
+            </div>
+            <div class="overview-item">
+                <div class="overview-number" id="toWatchMovies">0</div>
+                <div class="overview-label">To Watch</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<div class="section-heading">Your Watchlist</div>
+<div class="movie-list" id="watchlistContainer">
+    <!-- Movies will be rendered here -->
+</div>
+
+<script src="js/userinfo.js"></script>
+<script src="js/logout.js"></script>
+<script src="js/search.js"></script>
+<script src="js/watchlistselect.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/triggersearch.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+
+
+h1{
+    text-align: center;
+    font-size: 30px;
+    color:blue;
+}
+
+#load-movies-btn{
+    display:flex;
+    margin:auto;
+    padding:5px;
+    align-items:center;
+    color:white;
+    background-color: green;
+    border:solid 1px green;
+    border-radius: 4px;
+}
+
+#message{
+padding-top:10px;
+margin:auto;
+text-align:center;}
