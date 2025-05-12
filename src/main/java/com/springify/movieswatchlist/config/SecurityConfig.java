@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -19,6 +20,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 
+@EnableMethodSecurity
 @Configuration
 public class SecurityConfig {
 
@@ -30,6 +32,7 @@ public class SecurityConfig {
 
     @Autowired
     private LogoutHandler logoutHandler;
+
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) {
         try {
@@ -38,7 +41,7 @@ public class SecurityConfig {
                             .requestMatchers("/user/register", "/user/login", "/movie/{movieId}", "/movie/{movieId}/poster",
                                     "movie/search**", "/watchlist/mywatchlist", "dashboard/**", "/**.html", "css/**", "js/**").permitAll()
                             .requestMatchers("/user/**", "/watchlist/**").hasAnyRole("ADMIN", "USER")
-                            .requestMatchers("/admin/**", "/movie/**").hasRole("ADMIN")
+                            .requestMatchers("/admin/**", "/movie/add", "/movie/load-movies", "/movie/**").hasRole("ADMIN")
                             .anyRequest().authenticated())
                     .httpBasic(AbstractHttpConfigurer::disable)
                     .formLogin(AbstractHttpConfigurer::disable)

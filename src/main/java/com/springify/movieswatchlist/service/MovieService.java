@@ -215,6 +215,12 @@ public class MovieService {
                 if (row.getRowNum() == 0)
                     continue;
 
+                Year releaseYear= Year.of((int) row.getCell(2).getNumericCellValue());
+                Movie existingMovie=movieRepo.findByMovieNameAndReleaseYear(row.getCell(0).getStringCellValue(), releaseYear);
+                if(existingMovie!=null){
+                    throw new RuntimeException("Movie Already existed by same name and release year");
+                }
+
                 Movie movie = new Movie();
                 movie.setMovieName(row.getCell(0).getStringCellValue());
 
@@ -224,7 +230,7 @@ public class MovieService {
                         .map(Genre::valueOf)
                         .toList());
 
-                Year releaseYear= Year.of((int) row.getCell(2).getNumericCellValue());
+
                 movie.setReleaseYear(releaseYear);
                 movie.setDescription(row.getCell(3).getStringCellValue());
 
