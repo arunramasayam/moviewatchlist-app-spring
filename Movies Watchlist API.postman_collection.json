@@ -1,0 +1,2327 @@
+{
+	"info": {
+		"_postman_id": "d66fce41-978d-4ccd-b131-a36cddfa0d69",
+		"name": "Movies Watchlist API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40272458"
+	},
+	"item": [
+		{
+			"name": "User Controller",
+			"item": [
+				{
+					"name": "User Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Arun\",\r\n    \"email\":\"arunreddy@yahoo.com\",\r\n    \"password\":\"user@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Registration",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Arun\",\r\n    \"email\":\"arunreddy@yahoo.com\",\r\n    \"password\":\"user@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 08:18:08 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"email\": \"arunreddy@yahoo.com\",\n    \"name\": \"Arun\",\n    \"password\": \"$2a$10$N8fjycr.JAxmq/kyfMGoL.d8PghiU7DfQxikceGNyaqz6kObDnzhi\",\n    \"role\": \"USER\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"arunreddy@yahoo.com\",\r\n    \"password\":\"user@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"arunreddy@yahoo.com\",\r\n    \"password\":\"user@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/user/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "167"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 08:18:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Login Success\njwt:eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDM3OTI0LCJleHAiOjE3NDcwMzk3MjR9.LBI7ToUVBZxgYMgdCG87DwOScDkHpL30_Rz20nX2Zv4"
+						}
+					]
+				},
+				{
+					"name": "User Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDM3OTI0LCJleHAiOjE3NDcwMzk3MjR9.LBI7ToUVBZxgYMgdCG87DwOScDkHpL30_Rz20nX2Zv4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/userinfo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"userinfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "User Info",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/user/userinfo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user",
+										"userinfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 08:28:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Arun\",\n    \"email\": \"arunreddy@yahoo.com\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin Controller",
+			"item": [
+				{
+					"name": "Register Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbkBtb3ZpZXN3YXRjaGxpc3QuY29tIiwiaWF0IjoxNzQ3MDM4MjQxLCJleHAiOjE3NDcwNDAwNDF9.qocb62iHLeajj8QE4JZWsUDQ41-IBOzwLs8o0ouqaLU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Admin\",\r\n    \"email\":\"adminy@yahoo.com\",\r\n    \"password\":\"Admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/admin/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"admin",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Admin\",\r\n    \"email\":\"adminy@yahoo.com\",\r\n    \"password\":\"Admin@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 08:24:20 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"email\": \"adminy@yahoo.com\",\n    \"name\": \"Admin\",\n    \"password\": \"$2a$10$izaqLvuBrenEBFOsSNeP9emzPpuWJhHUOgg1XjKoreP9EDm2NVYWK\",\n    \"role\": \"ADMIN\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Dashboard Controller",
+			"item": [
+				{
+					"name": "mydashboard",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDM3OTI0LCJleHAiOjE3NDcwMzk3MjR9.LBI7ToUVBZxgYMgdCG87DwOScDkHpL30_Rz20nX2Zv4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/dashboard/mydashboard",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"dashboard",
+								"mydashboard"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "mydashboard",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/dashboard/mydashboard",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"dashboard",
+										"mydashboard"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 08:34:02 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 2,\n        \"email\": \"arunreddy@yahoo.com\",\n        \"name\": \"Arun\",\n        \"role\": \"USER\"\n    },\n    \"watchListOverviewDto\": {\n        \"totalMovies\": 0,\n        \"totalToWatchMovies\": 0,\n        \"totalWatchedMovies\": 0\n    },\n    \"watchListMovies\": []\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Movie Controller",
+			"item": [
+				{
+					"name": "Add Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbkBtb3ZpZXN3YXRjaGxpc3QuY29tIiwiaWF0IjoxNzQ3MDQwOTMwLCJleHAiOjE3NDcwNDI3MzB9.c6cHA_qRveMP8cYwJ9JpQHXdNllFsRlKc4pw248eQKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "movieJson",
+									"value": "{\"movieName\":\"As Good as It Gets\",\n\"releaseYear\":\"1997\",\n\"description\":\"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\",\n\"genre\":[\"ROMANCE\", \"COMEDY\"]\n}",
+									"type": "text"
+								},
+								{
+									"key": "moviePoster",
+									"type": "file",
+									"src": "/C:/Users/ramas/Downloads/As_good_as_it_gets.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/movie/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "movieJson",
+											"value": "{\"movieName\":\"As Good as It Gets\",\n\"releaseYear\":\"1997\",\n\"description\":\"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\",\n\"genre\":[\"ROMANCE\", \"COMEDY\"]\n}",
+											"type": "text"
+										},
+										{
+											"key": "moviePoster",
+											"type": "file",
+											"src": "/C:/Users/ramas/Downloads/As_good_as_it_gets.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/movie/add",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 08:47:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": null,\n    \"movieName\": \"As Good as It Gets\",\n    \"genre\": [\n        \"ROMANCE\",\n        \"COMEDY\"\n    ],\n    \"releaseYear\": \"1997\",\n    \"description\": \"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\"\n}"
+						},
+						{
+							"name": "Add Movie",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "movieJson",
+											"value": "{\"movieName\":\"As Good as It Gets\",\n\"releaseYear\":\"1997\",\n\"description\":\"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\",\n\"genre\":[\"ROMANCE\", \"COMEDY\"]\n}",
+											"type": "text"
+										},
+										{
+											"key": "moviePoster",
+											"type": "file",
+											"src": "/C:/Users/ramas/Downloads/As_good_as_it_gets.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/movie/add",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:09:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 29,\n    \"movieName\": \"As Good as It Gets\",\n    \"genre\": [\n        \"ROMANCE\",\n        \"COMEDY\"\n    ],\n    \"releaseYear\": \"1997\",\n    \"description\": \"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Movie",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbkBtb3ZpZXN3YXRjaGxpc3QuY29tIiwiaWF0IjoxNzQ3MDQwOTMwLCJleHAiOjE3NDcwNDI3MzB9.c6cHA_qRveMP8cYwJ9JpQHXdNllFsRlKc4pw248eQKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "movieJson",
+									"value": "{\"movieName\":\"As Good as It Gets\",\n\"releaseYear\":\"1998\",\n\"description\":\"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\",\n\"genre\":[\"ROMANCE\", \"COMEDY\"]\n}",
+									"type": "text"
+								},
+								{
+									"key": "moviePoster",
+									"type": "file",
+									"src": "/C:/Users/ramas/Downloads/As_good_as_it_gets.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/movie/update/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								"update",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Movie",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "movieJson",
+											"value": "{\"movieName\":\"As Good as It Gets\",\n\"releaseYear\":\"1998\",\n\"description\":\"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\",\n\"genre\":[\"ROMANCE\", \"COMEDY\"]\n}",
+											"type": "text"
+										},
+										{
+											"key": "moviePoster",
+											"type": "file",
+											"src": "/C:/Users/ramas/Downloads/As_good_as_it_gets.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/movie/update/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										"update",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:24:07 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 29,\n    \"movieName\": \"As Good as It Gets\",\n    \"genre\": [\n        \"ROMANCE\",\n        \"COMEDY\"\n    ],\n    \"releaseYear\": \"1998\",\n    \"description\": \"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbkBtb3ZpZXN3YXRjaGxpc3QuY29tIiwiaWF0IjoxNzQ3MDQwOTMwLCJleHAiOjE3NDcwNDI3MzB9.c6cHA_qRveMP8cYwJ9JpQHXdNllFsRlKc4pw248eQKw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/movie/delete/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								"delete",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Movie",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/movie/delete/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										"delete",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:25:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Movie deleted successfully"
+						}
+					]
+				},
+				{
+					"name": "MovieById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQyMjY3LCJleHAiOjE3NDcwNDQwNjd9.eruWrKrh00sf3EKCkyI4-Mn0gOa_--rlEMOCWnlhs-4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/movie/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "MovieById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/movie/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:31:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 3,\n        \"email\": \"arunreddy@yahoo.com\",\n        \"name\": \"Arun\",\n        \"password\": \"$2a$10$Qdh7g1XbJt9qfXwjFLUh6.ht7.V4L24xNaI7i86Mosa5bWfii46/i\",\n        \"role\": \"USER\"\n    },\n    \"movie\": {\n        \"id\": 1,\n        \"movieName\": \"In To the Wild\",\n        \"genre\": [\n            \"ADVENTURE\",\n            \"DRAMA\"\n        ],\n        \"releaseYear\": \"2007\",\n        \"description\": \"Christopher McCandless, a top student and athlete, donates his savings and hitch-hikes to Alaska to live in the wilderness. Along the way, he faces numerous challenges and meets interesting people.\"\n    },\n    \"movieStatus\": \"WATCHED\",\n    \"userRating\": 5,\n    \"userReview\": \"Must watch\",\n    \"overallRating\": 5,\n    \"totalRatedUsers\": 1,\n    \"reviewsList\": [\n        {\n            \"username\": \"Arun\",\n            \"userRating\": 5,\n            \"userReview\": \"Must watch\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "All Movies",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/movie/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All Movies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/movie/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:36:35 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"movieName\": \"In To the Wild\",\n        \"genre\": [\n            \"ADVENTURE\",\n            \"DRAMA\"\n        ],\n        \"releaseYear\": \"2007\",\n        \"description\": \"Christopher McCandless, a top student and athlete, donates his savings and hitch-hikes to Alaska to live in the wilderness. Along the way, he faces numerous challenges and meets interesting people.\"\n    },\n    {\n        \"id\": 2,\n        \"movieName\": \"Stronger\",\n        \"genre\": [\n            \"ACTION\",\n            \"DRAMA\"\n        ],\n        \"releaseYear\": \"2017\",\n        \"description\": \"Jeff Bauman, a man who turned into a symbol of hope and inspiration after surviving the Boston Marathon bombing of 2013, struggles to fight his own battles for emotional and physical rehabilitation.\"\n    },\n    {\n        \"id\": 3,\n        \"movieName\": \"Capone\",\n        \"genre\": [\n            \"CRIME\",\n            \"THRILLER\"\n        ],\n        \"releaseYear\": \"2020\",\n        \"description\": \"Al Capone, a notorious gangster suffering from dementia, is released by the government due to his deteriorating health. He suffers from hallucinations and has no memory of where his wealth is hidden.\"\n    },\n    {\n        \"id\": 4,\n        \"movieName\": \"Avatar\",\n        \"genre\": [\n            \"ACTION\",\n            \"SCI_FI\"\n        ],\n        \"releaseYear\": \"2009\",\n        \"description\": \"Jake, a paraplegic marine, replaces his brother on the Na'vi-inhabited Pandora for a corporate mission. He is accepted by the natives as one of their own, but he must decide where his loyalties lie.\"\n    },\n    {\n        \"id\": 5,\n        \"movieName\": \"12th  Fail  \",\n        \"genre\": [\n            \"DRAMA\"\n        ],\n        \"releaseYear\": \"2023\",\n        \"description\": \"PS officer Manoj Kumar Sharma fearlessly embraces the idea of restarting his academic journey and reclaiming his destiny at a place where millions of students attempt the world's toughest competitive exam: UPSC.\"\n    },\n    {\n        \"id\": 6,\n        \"movieName\": \"The Shawshank Redemption\",\n        \"genre\": [\n            \"THRILLER\",\n            \"CRIME\"\n        ],\n        \"releaseYear\": \"1994\",\n        \"description\": \"Andy Dufresne, a successful banker, is arrested for the murders of his wife and her lover, and is sentenced to life imprisonment at the Shawshank prison. He becomes the most unconventional prisoner.\"\n    },\n    {\n        \"id\": 7,\n        \"movieName\": \"Tumbbad\",\n        \"genre\": [\n            \"HORROR\",\n            \"FANTASY\"\n        ],\n        \"releaseYear\": \"2018\",\n        \"description\": \"When a family builds a shrine for Hastar, a monster who is never to be worshipped, and attempts to get their hands on his cursed wealth, they face catastrophic consequences.\"\n    },\n    {\n        \"id\": 8,\n        \"movieName\": \"Apocalypto\",\n        \"genre\": [\n            \"ACTION\",\n            \"ADVENTURE\",\n            \"SCI_FI\"\n        ],\n        \"releaseYear\": \"2006\",\n        \"description\": \"Jaguar Paw, a young man, is captured by rulers of the Mayan kingdom. When they decide to sacrifice him, he makes a plan to escape death.\"\n    },\n    {\n        \"id\": 9,\n        \"movieName\": \"The Intern\",\n        \"genre\": [\n            \"COMEDY\",\n            \"DRAMA\"\n        ],\n        \"releaseYear\": \"2015\",\n        \"description\": \"A seventy-year-old Ben Whittaker realises that retirement isn't an enjoyable experience. As a result, he decides to work as an intern at an online fashion store managed by an extremely sceptical boss.\"\n    },\n    {\n        \"id\": 10,\n        \"movieName\": \"Salaar\",\n        \"genre\": [\n            \"ACTION\",\n            \"THRILLER\"\n        ],\n        \"releaseYear\": \"2023\",\n        \"description\": \"Just when the prince of Khansaar is about to rise to the throne, a plan of overthrowing him is exercised and only one man can help him retrieve power.\"\n    },\n    {\n        \"id\": 11,\n        \"movieName\": \"The Boy Who Harnessed the Wind\",\n        \"genre\": [\n            \"DRAMA\",\n            \"HISTORY\"\n        ],\n        \"releaseYear\": \"2019\",\n        \"description\": \"A 13-year-old boy is thrown out of the school he loves when his family can no longer afford the fees. He sneaks into the library and learns how to build a windmill to save his village from a famine\"\n    },\n    {\n        \"id\": 12,\n        \"movieName\": \"The Elephant Whisperers\",\n        \"genre\": [\n            \"DOCUMENTARY\"\n        ],\n        \"releaseYear\": \"2022\",\n        \"description\": \"Bomman and Bellie, a couple in South India, devote their lives to caring for an orphaned baby elephant named Raghu, forging a family like no other that tests the barrier between the human and the animal world.\"\n    },\n    {\n        \"id\": 13,\n        \"movieName\": \"The Pursuit of Happyness\",\n        \"genre\": [\n            \"DRAMA\"\n        ],\n        \"releaseYear\": \"2006\",\n        \"description\": \"Chris Gardner takes up an unpaid internship in a brokerage firm after he loses his life's earnings selling a product he invested in. His wife leaves him and he is left with the custody of his son.\"\n    },\n    {\n        \"id\": 14,\n        \"movieName\": \"Catch Me If You Can\",\n        \"genre\": [\n            \"COMEDY\",\n            \"CRIME\"\n        ],\n        \"releaseYear\": \"2002\",\n        \"description\": \"Frank Abagnale Jr is a con man who poses as a pilot, doctor and lawyer and Frank Abagnale Jr is a con man who poses as a pilot, doctor and lawyer and cashes forged cheques worth millions before his 21st birthday, despite being constantly chased by FBI agent Carl Hanratty.\"\n    },\n    {\n        \"id\": 15,\n        \"movieName\": \"Men in Black\",\n        \"genre\": [\n            \"ACTION\",\n            \"SCI_FI\"\n        ],\n        \"releaseYear\": \"1997\",\n        \"description\": \"James, an NYC cop, is hired by Agent K of a secret government agency that monitors extraterrestrial life on Earth. Together, they must recover an item that has been stolen by an intergalactic villain.\"\n    },\n    {\n        \"id\": 16,\n        \"movieName\": \"Jersey\",\n        \"genre\": [\n            \"DRAMA\",\n            \"SPORT\"\n        ],\n        \"releaseYear\": \"2019\",\n        \"description\": \"Arjun, a talented but failed cricketer, decides to return to cricket in his late thirties, driven by the desire to represent the Indian cricket team and fulfil his son's wish for a jersey as a gift.\"\n    },\n    {\n        \"id\": 17,\n        \"movieName\": \"Inception\",\n        \"genre\": [\n            \"ACTION\",\n            \"SCI_FI\"\n        ],\n        \"releaseYear\": \"2010\",\n        \"description\": \"Cobb steals information from his targets by entering their dreams. He is wanted for his alleged role in his wife's murder and his only chance at redemption is to perform a nearly impossible task.\"\n    },\n    {\n        \"id\": 18,\n        \"movieName\": \"Interstellar\",\n        \"genre\": [\n            \"ADVENTURE\",\n            \"SCI_FI\"\n        ],\n        \"releaseYear\": \"2014\",\n        \"description\": \"When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.\"\n    },\n    {\n        \"id\": 19,\n        \"movieName\": \"The Godfather\",\n        \"genre\": [\n            \"CRIME\"\n        ],\n        \"releaseYear\": \"1972\",\n        \"description\": \"Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son, Michael. However, his decision unintentionally puts the lives of his loved ones in grave danger.\"\n    },\n    {\n        \"id\": 20,\n        \"movieName\": \"Forrest Grump\",\n        \"genre\": [\n            \"COMEDY\",\n            \"ROMANCE\"\n        ],\n        \"releaseYear\": \"1994\",\n        \"description\": \"Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny.\"\n    },\n    {\n        \"id\": 21,\n        \"movieName\": \"Good Will Hunting\",\n        \"genre\": [\n            \"DRAMA\",\n            \"ROMANCE\"\n        ],\n        \"releaseYear\": \"1997\",\n        \"description\": \"Will Hunting, a janitor at MIT, is a mathematical genius. But circumstances force him to join therapeutic sessions, where he confronts his past, re-evaluates his present and thinks of his future.\"\n    },\n    {\n        \"id\": 22,\n        \"movieName\": \"The Perks of Being a Walflower\",\n        \"genre\": [\n            \"DRAMA\",\n            \"ROMANCE\"\n        ],\n        \"releaseYear\": \"2012\",\n        \"description\": \"Charlie, a 15-year-old introvert, enters high school and is nervous about his new life. When he befriends his seniors, he learns to cope with his friend's suicide and his tumultuous past.\"\n    },\n    {\n        \"id\": 23,\n        \"movieName\": \"As Good as It Gets\",\n        \"genre\": [\n            \"COMEDY\",\n            \"ROMANCE\"\n        ],\n        \"releaseYear\": \"1997\",\n        \"description\": \"When the bigoted, compulsive writer Melvin's gay neighbour is brutally assaulted, he is forced to take care of his dog. He falls in love with a waitress and the three form an unlikely friendship.\"\n    },\n    {\n        \"id\": 24,\n        \"movieName\": \"Whiplash\",\n        \"genre\": [\n            \"DRAMA\"\n        ],\n        \"releaseYear\": \"2014\",\n        \"description\": \"Andrew enrols in a music conservatory to become a drummer. But he is mentored by Terence Fletcher, whose unconventional training methods push him beyond the boundaries of reason and sensibility.\"\n    },\n    {\n        \"id\": 25,\n        \"movieName\": \"Before Sunrise\",\n        \"genre\": [\n            \"DRAMA\",\n            \"ROMANCE\"\n        ],\n        \"releaseYear\": \"1995\",\n        \"description\": \"While travelling on a train in Europe, Jesse, an American man, meets Celine, a French woman. On his last day in Europe before returning to the US, he decides to spend his remaining hours with her.\"\n    },\n    {\n        \"id\": 26,\n        \"movieName\": \"Avengers: Endgame\",\n        \"genre\": [\n            \"ACTION\",\n            \"SCI_FI\"\n        ],\n        \"releaseYear\": \"2019\",\n        \"description\": \"After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.\"\n    },\n    {\n        \"id\": 27,\n        \"movieName\": \"Flow\",\n        \"genre\": [\n            \"ADVENTURE\",\n            \"FAMILY\"\n        ],\n        \"releaseYear\": \"2024\",\n        \"description\": \"Cat is a solitary animal, but as its home is devastated by a great flood, he finds refuge on a boat populated by various species, and will have to team up with them despite their differences.\"\n    },\n    {\n        \"id\": 28,\n        \"movieName\": \"Papam Pasivadu\",\n        \"genre\": [\n            \"ADVENTURE\",\n            \"THRILLER\"\n        ],\n        \"releaseYear\": \"1972\",\n        \"description\": \"Venugopal and Janaki realise that their son has tuberculosis and send him by plane to Europe for better treatment. However, the plane crashes, and the boy faces trouble reuniting with his parents.\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Load Movies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBZG1pbkBtb3ZpZXN3YXRjaGxpc3QuY29tIiwiaWF0IjoxNzQ3MDQyNzc3LCJleHAiOjE3NDcwNDQ1Nzd9.007z4GJX5zKCTHvsY4JxLtzG7iYJJAwT3Qdyn-QzvC4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/movie/load-movies",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								"load-movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Load Movies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/movie/load-movies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										"load-movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:39:54 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Movies loaded successfully"
+						}
+					]
+				},
+				{
+					"name": "Movie Poster",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/movie/{{movieId}}/poster",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								"{{movieId}}",
+								"poster"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Movies",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/movie/search?keyword=action&page=0&size=15",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"movie",
+								"search"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "action"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "15"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search Movies",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/movie/search?keyword=action&page=0&size=15",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"movie",
+										"search"
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": "action"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "size",
+											"value": "15"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:48:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"movie\": {\n                \"id\": 2,\n                \"movieName\": \"Stronger\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"DRAMA\"\n                ],\n                \"releaseYear\": \"2017\",\n                \"description\": \"Jeff Bauman, a man who turned into a symbol of hope and inspiration after surviving the Boston Marathon bombing of 2013, struggles to fight his own battles for emotional and physical rehabilitation.\"\n            },\n            \"overallRating\": 0\n        },\n        {\n            \"movie\": {\n                \"id\": 4,\n                \"movieName\": \"Avatar\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"2009\",\n                \"description\": \"Jake, a paraplegic marine, replaces his brother on the Na'vi-inhabited Pandora for a corporate mission. He is accepted by the natives as one of their own, but he must decide where his loyalties lie.\"\n            },\n            \"overallRating\": 0\n        },\n        {\n            \"movie\": {\n                \"id\": 8,\n                \"movieName\": \"Apocalypto\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"ADVENTURE\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"2006\",\n                \"description\": \"Jaguar Paw, a young man, is captured by rulers of the Mayan kingdom. When they decide to sacrifice him, he makes a plan to escape death.\"\n            },\n            \"overallRating\": 0\n        },\n        {\n            \"movie\": {\n                \"id\": 10,\n                \"movieName\": \"Salaar\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"THRILLER\"\n                ],\n                \"releaseYear\": \"2023\",\n                \"description\": \"Just when the prince of Khansaar is about to rise to the throne, a plan of overthrowing him is exercised and only one man can help him retrieve power.\"\n            },\n            \"overallRating\": 0\n        },\n        {\n            \"movie\": {\n                \"id\": 15,\n                \"movieName\": \"Men in Black\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"1997\",\n                \"description\": \"James, an NYC cop, is hired by Agent K of a secret government agency that monitors extraterrestrial life on Earth. Together, they must recover an item that has been stolen by an intergalactic villain.\"\n            },\n            \"overallRating\": 0\n        },\n        {\n            \"movie\": {\n                \"id\": 17,\n                \"movieName\": \"Inception\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"2010\",\n                \"description\": \"Cobb steals information from his targets by entering their dreams. He is wanted for his alleged role in his wife's murder and his only chance at redemption is to perform a nearly impossible task.\"\n            },\n            \"overallRating\": 0\n        },\n        {\n            \"movie\": {\n                \"id\": 26,\n                \"movieName\": \"Avengers: Endgame\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"2019\",\n                \"description\": \"After Thanos, an intergalactic warlord, disintegrates half of the universe, the Avengers must reunite and assemble again to reinvigorate their trounced allies and restore balance.\"\n            },\n            \"overallRating\": 0\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 15,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalPages\": 1,\n    \"totalElements\": 7,\n    \"numberOfElements\": 7,\n    \"first\": true,\n    \"size\": 15,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"empty\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Watchlist Controller",
+			"item": [
+				{
+					"name": "Add to Watchlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQzODMwLCJleHAiOjE3NDcwNDU2MzB9.hiyYIJWi7YHniLTSc78Avp5yid0ERkh9TUZBLODVr9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieId\":1,\r\n    \"watchStatus\":\"TO_WATCH\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/watchlist/add",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add to Watchlist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieId\":1,\r\n    \"watchStatus\":\"TO_WATCH\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/watchlist/add",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 09:58:44 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"movieId\": 1,\n    \"watchStatus\": \"TO_WATCH\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Watchlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQzODMwLCJleHAiOjE3NDcwNDU2MzB9.hiyYIJWi7YHniLTSc78Avp5yid0ERkh9TUZBLODVr9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"watchStatus\":\"WATCHED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/watchlist/update/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"update",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Watchlist",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"watchStatus\":\"WATCHED\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/watchlist/update/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"update",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 10:02:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"movieId\": 1,\n    \"watchStatus\": \"WATCHED\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Rate Movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQzODMwLCJleHAiOjE3NDcwNDU2MzB9.hiyYIJWi7YHniLTSc78Avp5yid0ERkh9TUZBLODVr9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"rating\":4.0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/watchlist/rate/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"rate",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Rate Movie",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"rating\":4.0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/watchlist/rate/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"rate",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 10:07:03 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"rating\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove from Watchlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQzODMwLCJleHAiOjE3NDcwNDU2MzB9.hiyYIJWi7YHniLTSc78Avp5yid0ERkh9TUZBLODVr9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/watchlist/delete/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"delete",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove from Watchlist",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/watchlist/delete/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"delete",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 10:03:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Watchlist removed successfully"
+						}
+					]
+				},
+				{
+					"name": "Movie Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQzODMwLCJleHAiOjE3NDcwNDU2MzB9.hiyYIJWi7YHniLTSc78Avp5yid0ERkh9TUZBLODVr9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"review\":\"Amazing, must watch\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/watchlist/review/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"review",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Movie Review",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"review\":\"Amazing, must watch\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/watchlist/review/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"review",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 10:08:17 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"review\": \"Amazing, must watch\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Remove Rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQzODMwLCJleHAiOjE3NDcwNDU2MzB9.hiyYIJWi7YHniLTSc78Avp5yid0ERkh9TUZBLODVr9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/watchlist/rate/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"rate",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove Rating",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/watchlist/rate/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"rate",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 10:10:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Rating and review deleted successfully"
+						}
+					]
+				},
+				{
+					"name": "Remove Review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQzODMwLCJleHAiOjE3NDcwNDU2MzB9.hiyYIJWi7YHniLTSc78Avp5yid0ERkh9TUZBLODVr9g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/watchlist/review/{{movieId}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"review",
+								"{{movieId}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Remove Review",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/watchlist/review/{{movieId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"review",
+										"{{movieId}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 10:09:58 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Review removed successfully"
+						}
+					]
+				},
+				{
+					"name": "My Watchlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcnVucmVkZHlAeWFob28uY29tIiwiaWF0IjoxNzQ3MDQ0ODg1LCJleHAiOjE3NDcwNDY2ODV9.ztVmUJE7an-PHU9XhqwllbLVAF6MbLqy0OV9_oeN7h8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/watchlist/mywatchlist",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"watchlist",
+								"mywatchlist"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "My Watchlist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/watchlist/mywatchlist",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"watchlist",
+										"mywatchlist"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 12 May 2025 10:15:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 2,\n        \"email\": \"arunreddy@yahoo.com\",\n        \"name\": \"Arun\",\n        \"role\": \"USER\"\n    },\n    \"allMovies\": [\n        {\n            \"movie\": {\n                \"id\": 1,\n                \"movieName\": \"In To the Wild\",\n                \"genre\": [\n                    \"ADVENTURE\",\n                    \"DRAMA\"\n                ],\n                \"releaseYear\": \"2007\",\n                \"description\": \"Christopher McCandless, a top student and athlete, donates his savings and hitch-hikes to Alaska to live in the wilderness. Along the way, he faces numerous challenges and meets interesting people.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": 5,\n            \"review\": \"amzing\"\n        },\n        {\n            \"movie\": {\n                \"id\": 4,\n                \"movieName\": \"Avatar\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"2009\",\n                \"description\": \"Jake, a paraplegic marine, replaces his brother on the Na'vi-inhabited Pandora for a corporate mission. He is accepted by the natives as one of their own, but he must decide where his loyalties lie.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": 4,\n            \"review\": \"must watch\"\n        },\n        {\n            \"movie\": {\n                \"id\": 15,\n                \"movieName\": \"Men in Black\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"1997\",\n                \"description\": \"James, an NYC cop, is hired by Agent K of a secret government agency that monitors extraterrestrial life on Earth. Together, they must recover an item that has been stolen by an intergalactic villain.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": null,\n            \"review\": null\n        },\n        {\n            \"movie\": {\n                \"id\": 20,\n                \"movieName\": \"Forrest Grump\",\n                \"genre\": [\n                    \"COMEDY\",\n                    \"ROMANCE\"\n                ],\n                \"releaseYear\": \"1994\",\n                \"description\": \"Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny.\"\n            },\n            \"watchStatus\": \"TO_WATCH\",\n            \"rating\": null,\n            \"review\": null\n        },\n        {\n            \"movie\": {\n                \"id\": 21,\n                \"movieName\": \"Good Will Hunting\",\n                \"genre\": [\n                    \"DRAMA\",\n                    \"ROMANCE\"\n                ],\n                \"releaseYear\": \"1997\",\n                \"description\": \"Will Hunting, a janitor at MIT, is a mathematical genius. But circumstances force him to join therapeutic sessions, where he confronts his past, re-evaluates his present and thinks of his future.\"\n            },\n            \"watchStatus\": \"TO_WATCH\",\n            \"rating\": null,\n            \"review\": null\n        },\n        {\n            \"movie\": {\n                \"id\": 28,\n                \"movieName\": \"Papam Pasivadu\",\n                \"genre\": [\n                    \"ADVENTURE\",\n                    \"THRILLER\"\n                ],\n                \"releaseYear\": \"1972\",\n                \"description\": \"Venugopal and Janaki realise that their son has tuberculosis and send him by plane to Europe for better treatment. However, the plane crashes, and the boy faces trouble reuniting with his parents.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": 5,\n            \"review\": \"Mothers favourite\"\n        }\n    ],\n    \"toWatch\": [\n        {\n            \"movie\": {\n                \"id\": 20,\n                \"movieName\": \"Forrest Grump\",\n                \"genre\": [\n                    \"COMEDY\",\n                    \"ROMANCE\"\n                ],\n                \"releaseYear\": \"1994\",\n                \"description\": \"Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny.\"\n            },\n            \"watchStatus\": \"TO_WATCH\",\n            \"rating\": null,\n            \"review\": null\n        },\n        {\n            \"movie\": {\n                \"id\": 21,\n                \"movieName\": \"Good Will Hunting\",\n                \"genre\": [\n                    \"DRAMA\",\n                    \"ROMANCE\"\n                ],\n                \"releaseYear\": \"1997\",\n                \"description\": \"Will Hunting, a janitor at MIT, is a mathematical genius. But circumstances force him to join therapeutic sessions, where he confronts his past, re-evaluates his present and thinks of his future.\"\n            },\n            \"watchStatus\": \"TO_WATCH\",\n            \"rating\": null,\n            \"review\": null\n        }\n    ],\n    \"watched\": [\n        {\n            \"movie\": {\n                \"id\": 1,\n                \"movieName\": \"In To the Wild\",\n                \"genre\": [\n                    \"ADVENTURE\",\n                    \"DRAMA\"\n                ],\n                \"releaseYear\": \"2007\",\n                \"description\": \"Christopher McCandless, a top student and athlete, donates his savings and hitch-hikes to Alaska to live in the wilderness. Along the way, he faces numerous challenges and meets interesting people.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": 5,\n            \"review\": \"amzing\"\n        },\n        {\n            \"movie\": {\n                \"id\": 4,\n                \"movieName\": \"Avatar\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"2009\",\n                \"description\": \"Jake, a paraplegic marine, replaces his brother on the Na'vi-inhabited Pandora for a corporate mission. He is accepted by the natives as one of their own, but he must decide where his loyalties lie.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": 4,\n            \"review\": \"must watch\"\n        },\n        {\n            \"movie\": {\n                \"id\": 15,\n                \"movieName\": \"Men in Black\",\n                \"genre\": [\n                    \"ACTION\",\n                    \"SCI_FI\"\n                ],\n                \"releaseYear\": \"1997\",\n                \"description\": \"James, an NYC cop, is hired by Agent K of a secret government agency that monitors extraterrestrial life on Earth. Together, they must recover an item that has been stolen by an intergalactic villain.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": null,\n            \"review\": null\n        },\n        {\n            \"movie\": {\n                \"id\": 28,\n                \"movieName\": \"Papam Pasivadu\",\n                \"genre\": [\n                    \"ADVENTURE\",\n                    \"THRILLER\"\n                ],\n                \"releaseYear\": \"1972\",\n                \"description\": \"Venugopal and Janaki realise that their son has tuberculosis and send him by plane to Europe for better treatment. However, the plane crashes, and the boy faces trouble reuniting with his parents.\"\n            },\n            \"watchStatus\": \"WATCHED\",\n            \"rating\": 5,\n            \"review\": \"Mothers favourite\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
