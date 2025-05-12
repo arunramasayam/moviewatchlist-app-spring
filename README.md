@@ -103,7 +103,7 @@ spring.jpa.hibernate.ddl-auto=update
 - `/login.html` - User Login
 - `/register.html` - User Registration
 - `/dashboard.html` - User Dashboard
-- `/watchlist.html` - My Watchlist
+- `/mywatchlist.html` - My Watchlist
 
 ### Admin Pages
 - `/login.html` - Admin Login
