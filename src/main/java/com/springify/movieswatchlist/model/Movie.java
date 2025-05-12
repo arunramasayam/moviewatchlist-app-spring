@@ -39,6 +39,7 @@ public class Movie {
     private String description;
     @Lob
     @JsonIgnore
+    @Column(columnDefinition = "LONGBLOB")
     private byte[] moviePoster;
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
