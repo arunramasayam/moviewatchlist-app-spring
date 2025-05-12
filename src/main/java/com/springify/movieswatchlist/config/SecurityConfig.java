@@ -39,7 +39,7 @@ public class SecurityConfig {
             http.csrf(csrf-> csrf.disable())
                     .authorizeHttpRequests(requests -> requests
                             .requestMatchers("/user/register", "/user/login", "/movie/{movieId}", "/movie/{movieId}/poster",
-                                    "movie/search**", "/watchlist/mywatchlist", "dashboard/**", "/**.html", "css/**", "js/**").permitAll()
+                                    "movie/search**", "/watchlist/mywatchlist", "dashboard/**", "/**.html", "css/**", "js/**", "/swagger-ui/**", "/v3/api-docs", "/swagger-ui.html", "v3/api-docs/**").permitAll()
                             .requestMatchers("/user/**", "/watchlist/**").hasAnyRole("ADMIN", "USER")
                             .requestMatchers("/admin/**", "/movie/add", "/movie/load-movies", "/movie/**").hasRole("ADMIN")
                             .anyRequest().authenticated())
