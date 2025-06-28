@@ -1,15 +1,4 @@
 
-    function getAuthHeaders() {
-      const token = localStorage.getItem("jwt");
-      const headers = { 'Content-Type': 'application/json' };
-      if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-      } else {
-       // alert("You are not logged in.");
-      }
-      return headers;
-    }
-
     function renderMovie(movieEntry) {
       const { movie, watchStatus } = movieEntry;
       const genre = Array.isArray(movie.genre) ? movie.genre.join(', ') : movie.genre;
@@ -38,7 +27,7 @@
     }
 
     fetch("/dashboard/mydashboard", {
-      headers: getAuthHeaders()
+      credentials:"include"
     })
     .then(res => res.json())
     .then(data => {

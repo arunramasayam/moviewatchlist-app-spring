@@ -4,10 +4,9 @@ import com.springify.movieswatchlist.dto.LoginRequestDto;
 import com.springify.movieswatchlist.model.Role;
 import com.springify.movieswatchlist.model.User;
 import com.springify.movieswatchlist.repo.UserRepo;
-import com.springify.movieswatchlist.security.token.Token;
-import com.springify.movieswatchlist.security.token.TokenRepository;
-import com.springify.movieswatchlist.security.token.TokenType;
 import jakarta.persistence.EntityNotFoundException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,6 +15,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,8 +33,6 @@ public class UserService {
     @Autowired
     private JwtService jwtService;
 
-    @Autowired
-    private TokenRepository tokenRepo;
 
 
     public User registerUser(User user) {
@@ -57,39 +55,24 @@ public class UserService {
         return user;
     }
 
-    public String userLogin(@Valid LoginRequestDto loginRequestDto) {
+    public String userLogin(@Valid LoginRequestDto loginRequestDto, HttpServletRequest request) {
         User existingUser=userRepo.findByEmail(loginRequestDto.getEmail());
         if(existingUser==null){
             throw new EntityNotFoundException("User not found");
         }
-        revokeUserTokens(existingUser);
 
         Authentication authentication=authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequestDto.getEmail(), loginRequestDto.getPassword()));
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        HttpSession session=request.getSession(true);
+        session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
+                SecurityContextHolder.getContext());
         if(authentication.isAuthenticated()){
-            String token=jwtService.generateToken(loginRequestDto.getEmail());
-            Token newToken=new Token();
-            newToken.setUser(existingUser);;
-            newToken.setToken(token);
-            newToken.setRevoked(false);
-            newToken.setTokenType(TokenType.BEARER);
-            newToken.setExpired(false);
-            tokenRepo.save(newToken);
-            return "Login Success\njwt:"+token;
+            return "Login Success";
         }
 
         return "Login Failed";
-    }
-
-    public void revokeUserTokens(User user){
-        List<Token> existingValidTokens= tokenRepo.findAllValidTokensByUser(user.getId());
-        if(existingValidTokens!=null){
-            existingValidTokens.forEach(token -> {
-                token.setExpired(true);
-                token.setRevoked(true);
-            });
-            tokenRepo.saveAll(existingValidTokens);
-        }
     }
 
 

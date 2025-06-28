@@ -60,9 +60,13 @@ function setupStarRating(currentRating) {
 
 // Function to update the rating (via PUT request to server)
 function setRating(newRating) {
+    getCsrfToken().then(csrfToken=>{
     fetch(`/watchlist/rate/${movieId}`, {
         method: 'PUT',
-        headers: getAuthHeaders(),
+        headers: {
+        "Content-Type":"application/json",
+        "X-XSRF-TOKEN":csrfToken},
+        credentials:"include",
         body: JSON.stringify({ rating: newRating })
     })
     .then(async res => {
@@ -75,13 +79,17 @@ function setRating(newRating) {
         console.error('Error updating rating:', err);
         alert('Failed to update rating: ' + err.message);
     });
+    });
 }
 
 // Function to remove the rating (via DELETE request to server)
 function removeRating() {
+getCsrfToken().then(csrfToken=>{
     fetch(`/watchlist/rate/${movieId}`, {
         method: 'DELETE',
-        headers: getAuthHeaders()
+        headers: {
+        "X-XSRF-TOKEN":csrfToken},
+        credentials:"include"
     })
     .then(async res => {
         if (!res.ok) throw new Error(await res.text());
@@ -92,5 +100,6 @@ function removeRating() {
     .catch(err => {
         console.error('Error removing rating:', err);
         alert('Failed to remove rating: ' + err.message);
+    });
     });
 }

@@ -1,15 +1,4 @@
 
-
-// === Auth Header Helper ===
-function getAuthHeaders() {
-    const token = localStorage.getItem("jwt");
-    const headers = {};
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-    }
-    return headers;
-}
-
 // === Pagination State ===
 let adminCurrentPage = 0;
 const adminPageSize = 15;
@@ -26,7 +15,7 @@ function loadMovies() {
 
     fetch(`/movie/search?keyword=${encodeURIComponent(keyword)}&page=${adminCurrentPage}&size=${adminPageSize}`, {
         method: 'GET',
-        headers: getAuthHeaders()
+        credentials:"include"
     })
     .then(res => res.json())
     .then(data => {
@@ -166,10 +155,13 @@ function handleFormSubmit(e) {
     formData.append("movieJson", new Blob([JSON.stringify(movieJson)], { type: "application/json" }));
     const posterFile = document.getElementById("poster").files[0];
     if (posterFile) formData.append("moviePoster", posterFile);
-
+    getCsrfToken().then(csrfToken=>{
     fetch(url, {
         method: isUpdate ? "PUT" : "POST",
-        headers: getAuthHeaders(),
+        credentials:"include",
+        headers:{
+        "X-XSRF-TOKEN":csrfToken
+        },
         body: formData
     })
     .then(res => {
@@ -189,15 +181,17 @@ function handleFormSubmit(e) {
         console.error(err);
         alert(isUpdate ? "Update failed" : "Save failed");
     });
+    });
 }
 
 // === Delete Movie ===
 function deleteMovie(id) {
     if (!confirm("Are you sure you want to delete this movie?")) return;
-
+    getCsrfToken().then(csrfToken=>{
     fetch(`/movie/delete/${id}`, {
         method: "DELETE",
-        headers: getAuthHeaders()
+        credentials:"include",
+        headers:{"X-XSRF-TOKEN":csrfToken}
     })
     .then(res => {
         if (!res.ok) throw new Error("Delete failed");
@@ -210,6 +204,7 @@ function deleteMovie(id) {
     .catch(err => {
         console.error(err);
         alert("Delete failed");
+    });
     });
 }
 

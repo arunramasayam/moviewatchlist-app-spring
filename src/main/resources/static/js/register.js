@@ -5,11 +5,14 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
     const email = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
 
+    getCsrfToken().then(csrfToken=>{
     fetch("/user/register", {
         method: "POST",
         headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "X-XSRF-TOKEN":csrfToken
         },
+        credentials:"include",
         body: JSON.stringify({ name, email, password })
     })
     .then(res => {
@@ -34,4 +37,5 @@ document.getElementById("signup-form").addEventListener("submit", function (e) {
         document.getElementById("signup-error").innerText = err.message;
         document.getElementById("signup-message").innerText = "";
     });
+});
 });

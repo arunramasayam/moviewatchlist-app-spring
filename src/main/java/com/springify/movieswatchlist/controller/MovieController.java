@@ -94,7 +94,7 @@ public class MovieController {
 
 
     @PreAuthorize("hasRole('ADMIN')")
-    @GetMapping("/load-movies")
+    @PostMapping("/load-movies")
     public ResponseEntity<String> loadMoviesByExcel() {
         String excel = "data/movies.xlsx";
         String loadResp = movieService.loadMoviesByExcel(excel);

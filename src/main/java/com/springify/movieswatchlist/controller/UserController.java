@@ -4,6 +4,7 @@ import com.springify.movieswatchlist.dto.LoginRequestDto;
 import com.springify.movieswatchlist.model.Role;
 import com.springify.movieswatchlist.model.User;
 import com.springify.movieswatchlist.service.UserService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,10 +37,10 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> userLogin(@RequestBody @Valid LoginRequestDto loginRequestDto){
+    public ResponseEntity<String> userLogin(@RequestBody @Valid LoginRequestDto loginRequestDto, HttpServletRequest request){
         String loginStatus="";
         try {
-            loginStatus = userService.userLogin(loginRequestDto);
+            loginStatus = userService.userLogin(loginRequestDto, request);
             return new ResponseEntity<>(loginStatus, HttpStatus.OK);
         }
         catch(BadCredentialsException e){

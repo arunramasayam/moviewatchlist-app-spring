@@ -5,10 +5,13 @@ function saveReview() {
         alert('Please enter a review.');
         return;
     }
-
+    getCsrfToken().then(csrfToken=>{
     fetch(`/watchlist/review/${movieId}`, {
         method: 'PUT',
-        headers: getAuthHeaders(),
+        headers: {
+        "Content-Type":"application/json",
+        "X-XSRF-TOKEN":csrfToken},
+        credentials:"include",
         body: JSON.stringify({ review: reviewText })
     })
     .then(res => {
@@ -23,25 +26,18 @@ function saveReview() {
         console.error('Error saving review:', err);
         alert('Error saving review.');
     });
+    });
 }
 
 function deleteReview() {
     // Show a confirmation before deletion
     if (!confirm('Are you sure you want to delete your review?')) return;
 
-    // Ensure the JWT token exists
-    const token = localStorage.getItem("jwt");
-    if (!token) {
-        alert("You must be logged in to delete a review.");
-        return;
-    }
-
+    getCsrfToken().then(csrfToken=>{
     fetch(`/watchlist/review/${movieId}`, {
         method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
-        }
+        headers: {"X-XSRF-TOKEN":csrfToken},
+        credentials:"include",
     })
     .then(res => {
         // Log the response to understand what is returned
@@ -71,6 +67,7 @@ function deleteReview() {
     .catch(err => {
         console.error('Error deleting review:', err);
         alert(`Error deleting review: ${err.message}`);
+    });
     });
 }
 

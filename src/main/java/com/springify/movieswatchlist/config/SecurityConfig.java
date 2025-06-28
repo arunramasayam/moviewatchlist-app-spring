@@ -1,6 +1,5 @@
 package com.springify.movieswatchlist.config;
 
-import com.springify.movieswatchlist.security.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,15 +16,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.logout.LogoutHandler;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 @EnableMethodSecurity
 @Configuration
 public class SecurityConfig {
 
-    @Autowired
-    private JwtFilter jwtFilter;
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -36,17 +33,19 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) {
         try {
-            http.csrf(csrf-> csrf.disable())
+            http.csrf(csrf->csrf.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                     .authorizeHttpRequests(requests -> requests
+                            .requestMatchers("/admin/**", "/movie/add", "/movie/update", "/movie/delete", "loadmovies.html","/movie/load-movies", "/moviemanagement.html").hasRole("ADMIN")
                             .requestMatchers("/user/register", "/user/login", "/movie/", "/movie/{movieId}", "/movie/{movieId}/poster",
-                                    "movie/search**", "/watchlist/mywatchlist", "dashboard/**", "/**.html", "css/**", "js/**", "/swagger-ui/**", "/v3/api-docs", "/swagger-ui.html", "v3/api-docs/**").permitAll()
+                                    "movie/search**", "/watchlist/mywatchlist", "dashboard/**", "/*.html",  "css/**", "js/**", "/swagger-ui/**", "/v3/api-docs", "/swagger-ui.html", "v3/api-docs/**", "/csrf-token", "/user/userinfo").permitAll()
                             .requestMatchers("/user/**", "/watchlist/**").hasAnyRole("ADMIN", "USER")
-                            .requestMatchers("/admin/**", "/movie/add", "/movie/load-movies", "/movie/**").hasRole("ADMIN")
                             .anyRequest().authenticated())
                     .httpBasic(AbstractHttpConfigurer::disable)
                     .formLogin(AbstractHttpConfigurer::disable)
-                    .sessionManagement(session->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                    .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
+                    .sessionManagement(session->
+                            session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                                    .maximumSessions(1)
+                                    .maxSessionsPreventsLogin(false))
                     .logout((logout)->logout
                     .logoutUrl("/api/v1/auth/logout")
                     .addLogoutHandler(logoutHandler)

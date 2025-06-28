@@ -1,13 +1,3 @@
-function getAuthHeaders() {
-      const token = localStorage.getItem("jwt");
-      const headers = { 'Content-Type': 'application/json' };
-      if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-      } else {
-        //alert("You are not logged in.");
-      }
-      return headers;
-    }
 
     function renderMovie(movie, watchStatus) {
       const container = document.createElement("div");
@@ -36,7 +26,7 @@ function getAuthHeaders() {
 
     fetch('/watchlist/mywatchlist', {
       method: 'GET',
-      headers: getAuthHeaders()
+      credentials:"include"
     })
     .then(async res => {
       if (!res.ok) throw new Error(await res.text());

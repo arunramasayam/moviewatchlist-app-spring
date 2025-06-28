@@ -1,9 +1,7 @@
 function loadUserInfo() {
-    const token = localStorage.getItem("jwt");
-
     fetch("/user/userinfo", {
         headers: {
-            "Authorization": "Bearer " + token
+            credentials:"include"
         }
     })
     .then(response => {

@@ -2,7 +2,6 @@ package com.springify.movieswatchlist.model;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.springify.movieswatchlist.security.token.Token;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -36,10 +35,6 @@ public class User {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private List<Token> tokens;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
     @JsonIgnore

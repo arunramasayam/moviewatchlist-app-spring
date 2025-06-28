@@ -4,21 +4,11 @@ const movieId = urlParams.get('movieId');
 // Fetch movie details when page loads
 fetchMovieDetails();
 
-function getAuthHeaders() {
-    const token = localStorage.getItem("jwt");
-    const headers = { 'Content-Type': 'application/json' };
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
-    } else {
-//        alert("You are not logged in. Please log in to use the watchlist feature.");
-    }
-    return headers;
-}
 
 function fetchMovieDetails() {
     fetch(`/movie/${movieId}`, {
         method: 'GET',
-        headers: getAuthHeaders()
+        credentials:"include"
     })
     .then(async res => {
         if (!res.ok) throw new Error(await res.text());

@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Movie Manager</title>
-    <link rel="stylesheet" href="/css/moviemanage.css";
+    <link rel="stylesheet" href="/css/moviemanage.css">
 </head>
 <body>
-
+<div id="user-section"></div>
 <h2 id="formTitle">Manage Movies</h2>
 <!-- Button to show form for Add Movie -->
 <button id="addmovie-btn" onclick="showForm('add')">Add Movie</button>
@@ -46,8 +46,11 @@
 <div id="movieList"></div>
 <br>
 <div id="pagination-controls"></div>
-
+<script src="js/getCsrfToken.js"></script>
 <script src="js/managemovies.js"></script>
+<script src="js/userinfo.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/logout.js"></script>
 
 </body>
 </html>

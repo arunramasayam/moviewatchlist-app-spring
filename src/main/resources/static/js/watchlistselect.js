@@ -50,9 +50,13 @@ function setupWatchlistUI(movieId, currentStatus) {
 
 function addToWatchlist(movieId, status) {
     document.getElementById('dropdown').style.display = 'none';
+    getCsrfToken().then(csrfToken=>{
     fetch('/watchlist/add', {
         method: 'POST',
-        headers: getAuthHeaders(),
+        headers: {
+        "Content-Type": "application/json",
+        "X-XSRF-TOKEN":csrfToken},
+        credentials:"include",
         body: JSON.stringify({ movieId, watchStatus: status })
     })
     .then(async res => {
@@ -61,12 +65,17 @@ function addToWatchlist(movieId, status) {
         location.reload();
     })
     .catch(err => alert(`Add failed: ${err.message}`));
+    });
 }
 
 function updateWatchlistStatus(movieId, status) {
+getCsrfToken().then(csrfToken=>{
     fetch(`/watchlist/update/${movieId}`, {
         method: 'PUT',
-        headers: getAuthHeaders(),
+        headers: {
+        "Content-Type": "application/json",
+                "X-XSRF-TOKEN":csrfToken},
+        credentials:"include",
         body: JSON.stringify({ watchStatus: status })
     })
     .then(async res => {
@@ -75,12 +84,15 @@ function updateWatchlistStatus(movieId, status) {
         location.reload();
     })
     .catch(err => alert(`Update failed: ${err.message}`));
+    });
 }
 
 function removeFromWatchlist(movieId) {
+    getCsrfToken().then(csrfToken=>{
     fetch(`/watchlist/delete/${movieId}`, {
         method: 'DELETE',
-        headers: getAuthHeaders()
+        headers: {"X-XSRF-TOKEN":csrfToken},
+        credentials:"include"
     })
     .then(async res => {
         if (!res.ok) throw new Error(await res.text());
@@ -88,4 +100,5 @@ function removeFromWatchlist(movieId) {
         location.reload();
     })
     .catch(err => alert(`Remove failed: ${err.message}`));
+    });
 }

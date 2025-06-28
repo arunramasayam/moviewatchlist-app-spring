@@ -1,16 +1,12 @@
     document.getElementById("load-movies-btn").addEventListener("click", function () {
-        const token = localStorage.getItem("jwt");
-        if (!token) {
-            document.getElementById("message").textContent = "Error: You must be logged in as admin.";
-            document.getElementById("message").style.color = "red";
-            return;
-        }
 
+        getCsrfToken().then(csrfToken=>{
         fetch("/movie/load-movies", {
-            method: "GET",
-            headers: {
-                "Authorization": "Bearer " + token
-            }
+            method: "POST",
+            headers:{
+            "X-XSRF-TOKEN":csrfToken
+            },
+            credentials:"include"
         })
         .then(response => {
             if (!response.ok) {
@@ -26,4 +22,5 @@
             document.getElementById("message").textContent = "Error: " + err.message;
             document.getElementById("message").style.color = "red";
         });
+    });
     });
